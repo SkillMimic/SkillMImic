@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Open-Vocabulary, Physical skill, Interactive agent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillMimic: Learning Reusable Basketball Skills from Demonstrations</title>
+  <link rel="icon" href="static/images/basketball_icon.svg" type="image/svg+xml">
+
+   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="https://kit.fontawesome.com/d383128d10.js" crossorigin="anonymous"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+        "three": "https://unpkg.com/three@0.127.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.127.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC36P9N5PB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KC36P9N5PB');
+</script>
+
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><img src="static/images/basketball_icon.png" style="height: 60px; margin-bottom: -3px;">SkillMimic: Learning Reusable Basketball Skills from Demonstrations</h1>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Teaser -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <!-- <h2 class="title is-3"><span class="dnerf">AnySkill</span> model</h2> -->
+          <div class="content has-text-justified">
+            <img src="./static/images/page_teaser.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser -->
+
+
+<!-- Paper abstract -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Mastering basketball skills such as diverse layups and dribbling involves complex interactions with the ball and requires real-time adjustments. 
+              Traditional reinforcement learning methods for interaction skills rely on labor-intensive, manually designed rewards that do not generalize well across different skills. 
+            </p>
+            <p>
+              Inspired by how humans learn from demonstrations, we propose <strong> SkillMimic </strong>, a data-driven approach that mimics both human and ball motions to learn a wide variety of basketball skills. 
+              SkillMimic employs a unified configuration to learn diverse skills from human-ball motion datasets, with skill diversity and generalization improving as the dataset grows. 
+              This approach allows training a single policy to learn multiple skills, enabling smooth skill switching even if these switches are not present in the reference dataset. 
+              The skills acquired by SkillMimic can be easily reused by a high-level controller to accomplish complex basketball tasks. 
+            </p>
+            <p>
+              To evaluate our approach, we introduce two basketball datasets: one estimated through monocular RGB videos and the other using advanced motion capture equipment, collectively containing about 35 minutes of diverse basketball skills. 
+              Experiments show that our method can effectively learn all the basketball skills contained in the dataset with a unified configuration, including various styles of dribbling, layups, and shooting. 
+              Furthermore, by training a high-level controller to reuse the acquired skills, we can achieve complex basketball tasks such as scoring, which involves dribbling toward the basket, timing the dribble and layup to score, retrieving the rebound, and repeating the process.
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Poster -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-centered">
+            <h2 class="title is-3">Overview</h2>
+            <img src="./static/images/page_framework.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End poster -->
+
+
+<!-- 3D demo-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div id="teaser-demo" class="container is-max-desktop">
+      <div class="has-text-centered">
+        <h2 class="title is-3">3D Visualization</h2>
+        <!-- <h2 class="subtitle"><sup>*</sup>Drag mouse to rotate & scroll wheel to zoom in/out</h2> -->
+        <h2 class="subtitle has-text-centered">
+          <p style="color: rgb(219, 54, 32); font-size: 0.9em;"> <b>Note</b>: <b>Select</b> a motion from dropdown and <b>drag</b> to move your view.</p>
+        </h2>
+      </div>
+      <br />
+      <!-- <div class="carousel demo-carousel"> -->
+      <div class="demo-carousel">
+        <div class="item has-text-centered">
+          <div style="position: absolute; left: 5%;">
+            <span style="font-size: 1.2em;"><b>Motions</b> </span>
+            <div class="select is-small">
+              <select id="motionSelector">
+                <option>HLC-Scoring-FixedBasket</option>
+                <option>HLC-Scoring-VaringBasket</option>
+                <option>HLC-Heading</option>
+                <option>HLC-Circling</option>
+                <option>LLC-ManualControl</option>
+              </select>
+            </div>
+          </div>
+          <div id="motion_loading" style="position: absolute; left: 50%; top: 45%;"></div>
+          <canvas id="canvas1" class="webgl" style="height: 100%; width: 100%;"></canvas> 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End 3D demo-->
+
+<!-- Small video carousel -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <h2 class="title is-2" style="text-align: center;"> Learned Skills </h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel" style="text-align: center;">
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Jump Shot
+          </div>
+          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_jumpshot.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Turnaround Layup
+          </div>
+          <video poster="" id="turnaroundlayup" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_turnaround_layup.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Layup
+          </div>
+          <video poster="" id="layup" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_layup.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Rebound
+          </div>
+          <video poster="" id="rebound" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_rebound.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Dribble Left
+          </div>
+          <video poster="" id="lrun" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_lrun.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Dribble Right
+          </div>
+          <video poster="" id="rrun" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_rrun.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Dribble Forward
+          </div>
+          <video poster="" id="run" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_run.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Dribble Turn
+          </div>
+          <video poster="" id="dribbleturn" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_dribbleturn.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Back Dribble
+          </div>
+          <video poster="" id="pickup" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_back_dribble.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Catch
+          </div>
+          <video poster="" id="pickup" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_catch.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Pass
+          </div>
+          <video poster="" id="pickup" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_pass.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Pickup
+          </div>
+          <video poster="" id="pickup" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_pickup.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End small video carousel-->
+
+<!-- Small Skill Switching -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <h2 class="title is-2" style="text-align: center;"> Skill Switching </h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel" style="text-align: center;">
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Layup -> Rebound
+          </div>
+          <video poster="" id="1_layup2rebound" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/1_layup2rebound.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Rebound -> Back Dribble
+          </div>
+          <video poster="" id="1_rebound2back" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/1_rebound2back.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Pickup -> Dribble Forward -> Turnaround Layup -> Catch
+          </div>
+          <video poster="" id="1_pick2run2layup2catch" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/1_pick2run2layup2catch.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Dribble Right -> Dribble Left
+          </div>
+          <video poster="" id="1_rrun2lrun" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/1_rrun2lrun.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Dribble Foward -> Layup
+          </div>
+          <video poster="" id="1_run2layup" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/1_run2layup.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption" style="margin-bottom: 10px;">
+            Dribble Foward -> Catch
+          </div>
+          <video poster="" id="1_run2catch" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/1_run2catch.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End skill switching-->
+
+<!-- High Level Tasks  -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">High Level Tasks </h2>
+    <div class="columns is-centered">
+      <div class="column is-two-fifths is-centered has-text-centered">
+        <video controls autoplay loop muted playsinline src="./static/videos/2_heading_demo.mp4" poster="./static/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <p> <strong>Heading</strong> (dribble the ball to target positions)</p> 
+      </div>
+      <div class="column is-two-fifths is-centered has-text-centered">
+        <video controls autoplay loop muted playsinline src="./static/videos/2_circling_demo.mp4" poster="./static/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <p> <strong>Circling</strong> (dribble the ball along the center points with target radii) </p> 
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-two-fifths is-centered has-text-centered">
+        <video controls autoplay loop muted playsinline src="./static/videos/2_layup_score_demo.mp4" poster="./static/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <p> <strong>Scoring</strong> (lay the ball up to target positions)</p>
+      </div>
+      <div class="column is-two-fifths is-centered has-text-centered">
+        <video controls autoplay loop muted playsinline src="./static/videos/2_throwing_demo.mp4" poster="./static/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <p> <strong>Throwing</strong> (throw ball to reach a target height)</p>
+      </div>
+    </div>
+</section>
+<!-- End High Level Tasks  -->
+
+<!-- Robustness  -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;"> Robustness and Generalization </h2>
+    <div class="columns is-centered">
+      <div class="column is-one-fifths is-centered has-text-centered">
+        <video controls autoplay loop muted playsinline src="./static/videos/3_getup.mp4" poster="./static/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <p> Get Up </p>
+      </div>
+      <div class="column is-one-fifths is-centered has-text-centered">
+        <video controls autoplay loop muted playsinline src="./static/videos/3_pickup.mp4" poster="./static/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <p> Pick Up </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Robustness  -->
+
+<script src="./animate.js" type="module"></script>
+
+
+</body>
+</html>
